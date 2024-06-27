@@ -13,7 +13,7 @@ class UserCreateService {
 
         const checkUserExist = await this.userRepository.findByEmail(email);
 
-        if(checkUserExist.length > 0) {
+        if(checkUserExist) {
             throw new AppError("Este e-mail já está em uso.");
         };
 
